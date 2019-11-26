@@ -4,7 +4,7 @@ metadata:
   namespace: prod
   annotations:
     ingress.bluemix.net/redirect-to-https: "true"
-    ingress.bluemix.net/rewrite-path: "serviceName=initialisation-service rewrite=/"
+    ingress.bluemix.net/rewrite-path: "serviceName=validator-service rewrite=/"
   # Change to your application name
   name: validator-service
 spec:

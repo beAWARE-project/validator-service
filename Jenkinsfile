@@ -6,12 +6,12 @@ node ('beaware-jenkins-slave') {
     }
 
     stage ('Build docker image') {
-	    sh 'docker build -t beaware/initialisation-service:${BUILD_NUMBER} --pull=true .'
+	    sh 'docker build -t beaware/validator-service:${BUILD_NUMBER} --pull=true .'
     }
 
     stage ('Push docker image') {
         withDockerRegistry([credentialsId: 'dockerhub-credentials']) {
-		sh 'docker push beaware/initialisation-service:${BUILD_NUMBER}'
+		sh 'docker push beaware/validator-service:${BUILD_NUMBER}'
         }
     }
 
