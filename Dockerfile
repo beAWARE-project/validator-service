@@ -1,14 +1,13 @@
 # Use an official Python runtime as a parent image
 FROM python:3.7-slim
 
-# Set the working directory to /kbs_workdir
-WORKDIR /val_workdir
+COPY src/ /usr/src/validator-service/
 
-# Copy the current directory contents into the container at /app
-COPY ./Validator /val_workdir
+COPY requirements.txt /usr/src/validator-service/
 
-# Copy the current directory contents into the container at /app
-COPY ./requirements.txt /val_workdir
+# Set the working directory to /usr/src/validator-service/
+WORKDIR /usr/src/validator-service/
+
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip 
