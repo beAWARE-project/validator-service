@@ -1,6 +1,6 @@
 from confluent_kafka import Producer
 import json
-from shared import load_credentials
+from bus_communication import load_credentials
 from shared import logger
 
 
@@ -31,7 +31,7 @@ class BusProducer:
 
         logger.info("Sending: " + str(topic))
         logger.debug("Sending: " + str(topic) + ": " + str(message))
-        return
+        # return
 
         # Produce and flush message to bus
         try:
@@ -43,6 +43,7 @@ class BusProducer:
             return False
 
         return True
+
     def on_delivery(self, err, msg):
         if err:
             logger.error(str(err) + str(msg) + str(" (message wasn't successfully delivered to bus)"))

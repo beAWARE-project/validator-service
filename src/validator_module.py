@@ -31,8 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-""""latitude" : 39.36415,
-      "longitude" : -0.37133,"""

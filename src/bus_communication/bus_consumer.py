@@ -1,5 +1,6 @@
 from confluent_kafka import Consumer
-from shared import load_credentials, TOP030, TOP803
+from shared import TOP030, TOP803
+from bus_communication import load_credentials
 import time
 from shared import message_queue, logger
 from validator import message_handler
